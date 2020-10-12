@@ -5,21 +5,20 @@
  * Use of this software requires acceptance of the Spryker Marketplace License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\MerchantSalesOrderMerchantUserGui\Business\Reader;
+namespace Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade;
 
-use Generated\Shared\Transfer\MerchantOrderTransfer;
 use Generated\Shared\Transfer\ShipmentTransfer;
 
-interface MerchantSalesOrderReaderInterface
+interface MerchantSalesOrderMerchantUserGuiToMerchantShipmentFacadeInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
+     * @param string $merchantReference
      * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
      *
      * @return bool
      */
     public function isMerchantOrderShipment(
-        MerchantOrderTransfer $merchantOrderTransfer,
+        string $merchantReference,
         ShipmentTransfer $shipmentTransfer
     ): bool;
 }
