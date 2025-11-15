@@ -1,7 +1,7 @@
 {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Customer' | trans } %}
     {% block widget_content %}
         <div class="row">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-md-4">
                 <dl>
                     <dt>{{ 'Reference' | trans }}</dt>
                     <dd><a href="{{ url('/customer/view', {'id-customer': merchantOrder.order.fkCustomer}) }}" target="_blank">{{ merchantOrder.order.customerReference }}</a></dd>
