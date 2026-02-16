@@ -32,9 +32,7 @@ use Spryker\Zed\MerchantSalesOrderMerchantUserGui\MerchantSalesOrderMerchantUser
 use Symfony\Component\Form\FormInterface;
 
 /**
- * @method \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Persistence\MerchantSalesOrderMerchantUserGuiQueryContainerInterface getQueryContainer()
  * @method \Spryker\Zed\MerchantSalesOrderMerchantUserGui\MerchantSalesOrderMerchantUserGuiConfig getConfig()
- * @method \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Business\MerchantSalesOrderMerchantUserGuiFacadeInterface getFacade()
  */
 class MerchantSalesOrderMerchantUserGuiCommunicationFactory extends AbstractCommunicationFactory
 {

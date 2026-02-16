@@ -5,3 +5,8 @@ parameters:
         - '#PHPDoc tag \@var for variable \$merchantOrderTransfer has no value type specified in iterable type array.#'
         - '#Strict comparison using === between array and false will always evaluate to false.#'
         - '#Parameter \#1 \$customerReference of method .+MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface::findByReference\(\) expects string, array\|float\|int\|string\|false\|null given.#'
+        # Compatibility with symfony/http-foundation <6.0.0
+        - '#Parameter \#2 \$value of method Symfony\\Component\\HttpFoundation\\InputBag::set\(\) expects array\|bool\|float\|int\|string\|null, Generated\\Shared\\Transfer\\MerchantOrderTransfer given.#'
+        # Defensive programming: type checks kept for runtime safety
+        -
+            identifier: function.alreadyNarrowedType

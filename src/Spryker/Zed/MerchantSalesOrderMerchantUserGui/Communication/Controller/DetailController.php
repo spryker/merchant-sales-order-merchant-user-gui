@@ -270,7 +270,6 @@ class DetailController extends AbstractController
     {
         // symfony/http-foundation: <6.0.0
         if (method_exists(JsonResponse::class, 'create')) {
-            /** @phpstan-var array $merchantOrderTransfer */
             $subRequest->request->set('merchantOrderTransfer', $merchantOrderTransfer);
         }
 
