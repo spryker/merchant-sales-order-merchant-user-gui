@@ -36,21 +36,11 @@ class MerchantSalesOrderMerchantUserGuiToCustomerFacadeBridge implements Merchan
         return $this->customerFacade->findByReference($customerReference);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressTransfer|null
-     */
     public function findCustomerAddressByAddressData(AddressTransfer $addressTransfer): ?AddressTransfer
     {
         return $this->customerFacade->findCustomerAddressByAddressData($addressTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressesTransfer
-     */
     public function getAddresses(CustomerTransfer $customerTransfer): AddressesTransfer
     {
         return $this->customerFacade->getAddresses($customerTransfer);

@@ -58,11 +58,6 @@ abstract class AbstractMerchantShipmentController extends AbstractController
      */
     protected const FIELD_IS_UPDATED = 'is_updated';
 
-    /**
-     * @param int $idMerchantSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     protected function findMerchantOrder(int $idMerchantSalesOrder): ?MerchantOrderTransfer
     {
         $merchantUserTransfer = $this->getFactory()->getMerchantUserFacade()->getCurrentMerchantUser();
@@ -98,12 +93,6 @@ abstract class AbstractMerchantShipmentController extends AbstractController
         );
     }
 
-    /**
-     * @param string $merchantReference
-     * @param int|null $idShipment
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTransfer|null
-     */
     protected function findShipment(string $merchantReference, ?int $idShipment = null): ?ShipmentTransfer
     {
         if (!$idShipment) {

@@ -80,10 +80,6 @@ class MerchantShipmentGroupFormDataProvider
      */
     protected $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface $customerFacade
-     * @param \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToShipmentFacadeInterface $shipmentFacade
-     */
     public function __construct(
         MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface $customerFacade,
         MerchantSalesOrderMerchantUserGuiToShipmentFacadeInterface $shipmentFacade
@@ -92,12 +88,6 @@ class MerchantShipmentGroupFormDataProvider
         $this->shipmentFacade = $shipmentFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentGroupTransfer
-     */
     public function getData(MerchantOrderTransfer $merchantOrderTransfer, ShipmentTransfer $shipmentTransfer): ShipmentGroupTransfer
     {
         $shipmentTransfer = $this->hydrateShipmentTransfer($shipmentTransfer, $merchantOrderTransfer);
@@ -114,12 +104,6 @@ class MerchantShipmentGroupFormDataProvider
         return $shipmentGroupTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTransfer
-     */
     protected function hydrateShipmentTransfer(ShipmentTransfer $shipmentTransfer, MerchantOrderTransfer $merchantOrderTransfer): ShipmentTransfer
     {
         $shipmentTransfer = $this->hydrateShipmentAddressTransfer($merchantOrderTransfer, $shipmentTransfer);
@@ -137,12 +121,6 @@ class MerchantShipmentGroupFormDataProvider
         return $shipmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTransfer
-     */
     protected function hydrateShipmentAddressTransfer(
         MerchantOrderTransfer $merchantOrderTransfer,
         ShipmentTransfer $shipmentTransfer
@@ -265,11 +243,6 @@ class MerchantShipmentGroupFormDataProvider
         return $newAddressChoice + $addresses;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     *
-     * @return string
-     */
     protected function getAddressLabel(AddressTransfer $addressTransfer): string
     {
         return sprintf(
@@ -337,12 +310,6 @@ class MerchantShipmentGroupFormDataProvider
         return $sanitizedChoices;
     }
 
-    /**
-     * @param string $addressLabel
-     * @param int $itemNumber
-     *
-     * @return string
-     */
     protected function getSanitizedCustomerAddressChoices(string $addressLabel, int $itemNumber): string
     {
         return sprintf('%s - %s', $addressLabel, $itemNumber);
@@ -386,12 +353,6 @@ class MerchantShipmentGroupFormDataProvider
         return $combinedSalutation;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     * @param int $idSalesShipment
-     *
-     * @return \Generated\Shared\Transfer\AddressTransfer|null
-     */
     protected function findOrderItemShippingAddressTransfer(
         MerchantOrderTransfer $merchantOrderTransfer,
         int $idSalesShipment

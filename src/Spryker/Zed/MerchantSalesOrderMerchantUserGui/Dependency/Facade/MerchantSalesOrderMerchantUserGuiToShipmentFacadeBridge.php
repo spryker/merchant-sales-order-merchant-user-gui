@@ -47,12 +47,6 @@ class MerchantSalesOrderMerchantUserGuiToShipmentFacadeBridge implements Merchan
         return $this->shipmentFacade->createShipmentGroupTransferWithListedItems($shipmentGroupTransfer, $itemListUpdatedStatus);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentGroupTransfer $shipmentGroupTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentGroupResponseTransfer
-     */
     public function saveShipment(ShipmentGroupTransfer $shipmentGroupTransfer, OrderTransfer $orderTransfer): ShipmentGroupResponseTransfer
     {
         return $this->shipmentFacade->saveShipment($shipmentGroupTransfer, $orderTransfer);

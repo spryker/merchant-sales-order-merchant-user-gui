@@ -36,9 +36,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class MerchantSalesOrderMerchantUserGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Communication\Table\MerchantOrderTable
-     */
     public function createMerchantOrderTable(): MerchantOrderTable
     {
         return new MerchantOrderTable(
@@ -51,17 +48,11 @@ class MerchantSalesOrderMerchantUserGuiCommunicationFactory extends AbstractComm
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Communication\Form\DataProvider\EventTriggerFormDataProvider
-     */
     public function createEventTriggerFormDataProvider(): EventTriggerFormDataProvider
     {
         return new EventTriggerFormDataProvider();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Communication\Form\DataProvider\EventItemTriggerFormDataProvider
-     */
     public function createEventItemTriggerFormDataProvider(): EventItemTriggerFormDataProvider
     {
         return new EventItemTriggerFormDataProvider();
@@ -95,9 +86,6 @@ class MerchantSalesOrderMerchantUserGuiCommunicationFactory extends AbstractComm
         return $this->getConfig()->getMerchantSalesOrderDetailExternalBlocksUrls();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Communication\Form\DataProvider\MerchantShipmentGroupFormDataProvider
-     */
     public function createMerchantShipmentGroupFormDataProvider(): MerchantShipmentGroupFormDataProvider
     {
         return new MerchantShipmentGroupFormDataProvider(
@@ -127,97 +115,61 @@ class MerchantSalesOrderMerchantUserGuiCommunicationFactory extends AbstractComm
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::PROPEL_QUERY_MERCHANT_SALES_ORDER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToMoneyFacadeInterface
-     */
     public function getMoneyFacade(): MerchantSalesOrderMerchantUserGuiToMoneyFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_MONEY);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Service\MerchantSalesOrderMerchantUserGuiToUtilSanitizeInterface
-     */
     public function getUtilSanitizeService(): MerchantSalesOrderMerchantUserGuiToUtilSanitizeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::SERVICE_UTIL_SANITIZE);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Service\MerchantSalesOrderMerchantUserGuiToUtilDateTimeServiceInterface
-     */
     public function getDateTimeService(): MerchantSalesOrderMerchantUserGuiToUtilDateTimeServiceInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::SERVICE_DATE_TIME);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface
-     */
     public function getCustomerFacade(): MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_CUSTOMER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToMerchantUserFacadeInterface
-     */
     public function getMerchantUserFacade(): MerchantSalesOrderMerchantUserGuiToMerchantUserFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_MERCHANT_USER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToMerchantSalesOrderFacadeInterface
-     */
     public function getMerchantSalesOrderFacade(): MerchantSalesOrderMerchantUserGuiToMerchantSalesOrderFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_MERCHANT_SALES_ORDER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Service\MerchantSalesOrderMerchantUserGuiToShipmentServiceInterface
-     */
     public function getShipmentService(): MerchantSalesOrderMerchantUserGuiToShipmentServiceInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::SERVICE_SHIPMENT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToMerchantOmsFacadeInterface
-     */
     public function getMerchantOmsFacade(): MerchantSalesOrderMerchantUserGuiToMerchantOmsFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_MERCHANT_OMS);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToShipmentFacadeInterface
-     */
     public function getShipmentFacade(): MerchantSalesOrderMerchantUserGuiToShipmentFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_SHIPMENT);
     }
 
-    /**
-     * @return \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface
-     */
     public function getShipmentFormTypePlugin(): FormTypeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::PLUGIN_SHIPMENT_FORM_TYPE);
     }
 
-    /**
-     * @return \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface
-     */
     public function getItemFormTypePlugin(): FormTypeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::PLUGIN_ITEM_FORM_TYPE);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderMerchantUserGui\Dependency\Facade\MerchantSalesOrderMerchantUserGuiToMerchantShipmentFacadeInterface
-     */
     public function getMerchantShipmentFacade(): MerchantSalesOrderMerchantUserGuiToMerchantShipmentFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderMerchantUserGuiDependencyProvider::FACADE_MERCHANT_SHIPMENT);

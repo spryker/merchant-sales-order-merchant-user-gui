@@ -64,11 +64,6 @@ class MerchantShipmentGroupFormType extends AbstractType
      */
     protected const OPTION_ORDER_ITEMS_CHOICES = 'items_choices';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver

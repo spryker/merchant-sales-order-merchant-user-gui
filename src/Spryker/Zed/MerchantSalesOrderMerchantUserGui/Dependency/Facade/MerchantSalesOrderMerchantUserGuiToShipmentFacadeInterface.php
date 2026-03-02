@@ -29,11 +29,5 @@ interface MerchantSalesOrderMerchantUserGuiToShipmentFacadeInterface
         array $itemListUpdatedStatus
     ): ShipmentGroupTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentGroupTransfer $shipmentGroupTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentGroupResponseTransfer
-     */
     public function saveShipment(ShipmentGroupTransfer $shipmentGroupTransfer, OrderTransfer $orderTransfer): ShipmentGroupResponseTransfer;
 }

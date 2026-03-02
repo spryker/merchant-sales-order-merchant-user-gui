@@ -20,18 +20,8 @@ interface MerchantSalesOrderMerchantUserGuiToCustomerFacadeInterface
      */
     public function findByReference($customerReference): ?CustomerTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressTransfer|null
-     */
     public function findCustomerAddressByAddressData(AddressTransfer $addressTransfer): ?AddressTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressesTransfer
-     */
     public function getAddresses(CustomerTransfer $customerTransfer): AddressesTransfer;
 
     /**

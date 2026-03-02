@@ -25,11 +25,6 @@ class MerchantSalesOrderMerchantUserGuiToMerchantShipmentFacadeBridge implements
         $this->merchantShipmentFacade = $merchantShipmentFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantShipmentCriteriaTransfer $merchantShipmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTransfer|null
-     */
     public function findShipment(MerchantShipmentCriteriaTransfer $merchantShipmentCriteriaTransfer): ?ShipmentTransfer
     {
         return $this->merchantShipmentFacade->findShipment($merchantShipmentCriteriaTransfer);

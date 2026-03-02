@@ -35,21 +35,11 @@ class MerchantSalesOrderMerchantUserGuiToMoneyFacadeBridge implements MerchantSa
         return $this->moneyFacade->fromInteger($amount, $isoCode);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MoneyTransfer $moneyTransfer
-     *
-     * @return string
-     */
     public function formatWithSymbol(MoneyTransfer $moneyTransfer): string
     {
         return $this->moneyFacade->formatWithSymbol($moneyTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MoneyTransfer $moneyTransfer
-     *
-     * @return string
-     */
     public function formatWithoutSymbol(MoneyTransfer $moneyTransfer): string
     {
         return $this->moneyFacade->formatWithoutSymbol($moneyTransfer);

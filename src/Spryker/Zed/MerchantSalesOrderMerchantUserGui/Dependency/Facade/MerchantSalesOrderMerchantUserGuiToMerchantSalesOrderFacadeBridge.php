@@ -25,11 +25,6 @@ class MerchantSalesOrderMerchantUserGuiToMerchantSalesOrderFacadeBridge implemen
         $this->merchantSalesOrderFacade = $merchantSalesOrderFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderCriteriaTransfer $merchantCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     public function findMerchantOrder(MerchantOrderCriteriaTransfer $merchantCriteriaTransfer): ?MerchantOrderTransfer
     {
         $merchantOrderTransfer = $this->merchantSalesOrderFacade->findMerchantOrder($merchantCriteriaTransfer);
@@ -37,11 +32,6 @@ class MerchantSalesOrderMerchantUserGuiToMerchantSalesOrderFacadeBridge implemen
         return $merchantOrderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
-     *
-     * @return int
-     */
     public function getMerchantOrdersCount(MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer): int
     {
         return $this->merchantSalesOrderFacade->getMerchantOrdersCount($merchantOrderCriteriaTransfer);

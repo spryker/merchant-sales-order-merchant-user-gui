@@ -94,11 +94,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
      */
     public const PLUGIN_ITEM_FORM_TYPE = 'PLUGIN_ITEM_FORM_TYPE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -120,11 +115,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantSalesOrderFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_SALES_ORDER, function (Container $container) {
@@ -134,11 +124,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantSalesOrderQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_MERCHANT_SALES_ORDER, $container->factory(function () {
@@ -148,11 +133,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMoneyFacade(Container $container): Container
     {
         $container->set(static::FACADE_MONEY, function (Container $container) {
@@ -162,11 +142,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_USER, function (Container $container) {
@@ -176,11 +151,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerFacade(Container $container): Container
     {
         $container->set(static::FACADE_CUSTOMER, function (Container $container) {
@@ -190,11 +160,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilSanitizeService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_SANITIZE, function (Container $container) {
@@ -204,11 +169,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDateTimeService(Container $container): Container
     {
         $container->set(static::SERVICE_DATE_TIME, function (Container $container) {
@@ -218,11 +178,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantOmsFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_OMS, function (Container $container) {
@@ -234,11 +189,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addShipmentService(Container $container): Container
     {
         $container->set(static::SERVICE_SHIPMENT, function (Container $container) {
@@ -248,11 +198,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addShipmentFacade(Container $container): Container
     {
         $container->set(static::FACADE_SHIPMENT, function (Container $container) {
@@ -264,11 +209,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addShipmentFormTypePlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_SHIPMENT_FORM_TYPE, function () {
@@ -295,11 +235,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         );
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addItemFormTypePlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_ITEM_FORM_TYPE, function () {
@@ -326,11 +261,6 @@ class MerchantSalesOrderMerchantUserGuiDependencyProvider extends AbstractBundle
         );
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantShipmentFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_SHIPMENT, function (Container $container) {

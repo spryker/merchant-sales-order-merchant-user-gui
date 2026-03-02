@@ -117,12 +117,6 @@ class DetailController extends AbstractController
         ];
     }
 
-    /**
-     * @param int $idMerchantSalesOrder
-     * @param int $idMerchant
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     protected function findMerchantSalesOrder(int $idMerchantSalesOrder, int $idMerchant): ?MerchantOrderTransfer
     {
         $merchantOrderCriteriaTransfer = (new MerchantOrderCriteriaTransfer())
@@ -220,11 +214,6 @@ class DetailController extends AbstractController
         return $events;
     }
 
-    /**
-     * @param int $idMerchantSalesOrder
-     *
-     * @return string
-     */
     protected function createRedirectLink(int $idMerchantSalesOrder): string
     {
         $redirectUrlParams = [

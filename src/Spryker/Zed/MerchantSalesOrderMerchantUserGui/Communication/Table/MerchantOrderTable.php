@@ -113,11 +113,6 @@ class MerchantOrderTable extends AbstractTable
         $this->merchantUserFacade = $merchantUserFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->setHeader($config);
@@ -148,11 +143,6 @@ class MerchantOrderTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $actions = [
@@ -324,11 +314,6 @@ class MerchantOrderTable extends AbstractTable
         return '<a href="' . $url . '">' . $fullCustomerName . '</a>';
     }
 
-    /**
-     * @param string $emailAddress
-     *
-     * @return string
-     */
     protected function formatEmailAddress(string $emailAddress): string
     {
         $escapedEmailAddress = $this->sanitizeService->escapeHtml($emailAddress);
@@ -353,13 +338,6 @@ class MerchantOrderTable extends AbstractTable
         return $this->formatPrice((int)$item[SpyMerchantSalesOrderTotalsTableMap::COL_GRAND_TOTAL], true, $currencyIsoCode);
     }
 
-    /**
-     * @param int $value
-     * @param bool $includeSymbol
-     * @param string|null $currencyIsoCode
-     *
-     * @return string
-     */
     protected function formatPrice(int $value, bool $includeSymbol = true, ?string $currencyIsoCode = null): string
     {
         $moneyTransfer = $this->moneyFacade->fromInteger($value, $currencyIsoCode);
@@ -371,11 +349,6 @@ class MerchantOrderTable extends AbstractTable
         return $this->moneyFacade->formatWithoutSymbol($moneyTransfer);
     }
 
-    /**
-     * @param string $itemStatuses
-     *
-     * @return string
-     */
     protected function formatItemStatuses(string $itemStatuses): string
     {
         $itemStatusLabelCollection = [];
