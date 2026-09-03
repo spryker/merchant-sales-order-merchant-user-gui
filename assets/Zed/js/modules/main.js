@@ -5,8 +5,14 @@
 
 'use strict';
 
-module.exports = function (trigger, target, inputDate) {
-    $(inputDate)
+/**
+ * Legacy jQuery datepicker setup for the requested delivery date.
+ *
+ * @deprecated Superseded by `DatePickerType` and the Gui DateTimePicker, which are configured
+ *   declaratively. Kept only for installations running spryker/gui older than 5.4.0.
+ */
+function initLegacyDeliveryDatePicker($inputDate) {
+    $inputDate
         .datepicker({
             dateFormat: 'yy-mm-dd',
             changeMonth: true,
@@ -22,6 +28,17 @@ module.exports = function (trigger, target, inputDate) {
                 $.datepicker._clearDate(this);
             }
         });
+}
+
+module.exports = function (trigger, target, inputDate) {
+    var $inputDate = $(inputDate);
+
+    // From spryker/gui 5.4.0 on, this field is built with `DatePickerType`, which marks it with
+    // `data-spryker-picker` and lets the Gui DateTimePicker initialize it. Older Gui versions have
+    // no such type, so the legacy picker above is set up instead.
+    if (!$inputDate.is('[data-spryker-picker]')) {
+        initLegacyDeliveryDatePicker($inputDate);
+    }
 
     function toggleForm() {
         var selectedOptionValue = $(trigger).val();
