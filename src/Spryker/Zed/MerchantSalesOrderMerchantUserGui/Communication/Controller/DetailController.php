@@ -259,6 +259,7 @@ class DetailController extends AbstractController
     {
         // symfony/http-foundation: <6.0.0
         if (method_exists(JsonResponse::class, 'create')) {
+            // @phpstan-ignore argument.type (BC-only branch; unreachable under current/newer Symfony where InputBag::set() is scalar-only)
             $subRequest->request->set('merchantOrderTransfer', $merchantOrderTransfer);
         }
 
