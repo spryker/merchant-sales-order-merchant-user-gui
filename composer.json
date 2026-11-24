@@ -49,5 +49,9 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
+    },
+    "conflict": {
+        "spryker/cart-note-merchant-sales-order-gui": "<1.0.1",
+        "spryker/discount-merchant-sales-order-gui": "<1.0.1"
     }
 }
